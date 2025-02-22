@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctya6377tb4oe"]
+
+[ext_resource type="Script" path="res://scripts/lightning.gd" id="1_emf56"]
+
+[node name="Lightning" type="Node2D"]
+script = ExtResource("1_emf56")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 705.0
+offset_bottom = 407.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+speed_scale = 4.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx4rob0x42ori"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_i4o6x"]
+[ext_resource type="PackedScene" uid="uid://iv2at426mmwg" path="res://scenes/player.tscn" id="1_sxpgd"]
+[ext_resource type="PackedScene" uid="uid://530dwson1w6h" path="res://scenes/spawner.tscn" id="2_e3bny"]
+[ext_resource type="PackedScene" uid="uid://vc71cfa8t4oj" path="res://scenes/background.tscn" id="4_i506i"]
+[ext_resource type="PackedScene" uid="uid://ctya6377tb4oe" path="res://scenes/lightning.tscn" id="4_smqgy"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_i4o6x")
+
+[node name="Background" parent="." instance=ExtResource("4_i506i")]
+z_index = -5
+
+[node name="Spawner" parent="." instance=ExtResource("2_e3bny")]
+visibility_layer = 2
+
+[node name="Player" parent="." instance=ExtResource("1_sxpgd")]
+visibility_layer = 2
+
+[node name="Lightning" parent="." instance=ExtResource("4_smqgy")]
+z_index = 1

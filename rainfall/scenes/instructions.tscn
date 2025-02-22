@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://daapwei0wxg2t"]
+
+[ext_resource type="Script" path="res://scripts/instructions.gd" id="1_jrasr"]
+[ext_resource type="PackedScene" uid="uid://vc71cfa8t4oj" path="res://scenes/background.tscn" id="2_skrsh"]
+
+[node name="Instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jrasr")
+
+[node name="Background" parent="." instance=ExtResource("2_skrsh")]
+layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 24.0
+offset_right = 659.0
+offset_bottom = 281.0
+text = "avoid the rain, dont die. survive as long as you can.
+
+you get smaller as your health diminishes. use that to your advantage, maybe.
+
+movement:
+WASD keys (pc)
+joystick (mobile) -- coming soon"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = -73.0
+offset_right = 189.0
+offset_bottom = -37.0
+grow_vertical = 0
+text = "go back to menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

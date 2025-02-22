@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://vc71cfa8t4oj"]
+
+[ext_resource type="Texture2D" uid="uid://c6k5mfo546hff" path="res://assets/ac26c845-6e3b-4a48-9e85-5cb4d05774e5_large.png" id="1_qj566"]
+
+[node name="Background" type="Control"]
+z_index = -11
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qj566")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.35)

@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://b561gctwrd0et"]
+
+[ext_resource type="Script" path="res://scripts/difficulty.gd" id="1_4rw3o"]
+[ext_resource type="PackedScene" uid="uid://vc71cfa8t4oj" path="res://scenes/background.tscn" id="2_ias5e"]
+
+[node name="DifficultyMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rw3o")
+
+[node name="Background" parent="." instance=ExtResource("2_ias5e")]
+layout_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0914286
+anchor_top = 0.23125
+anchor_right = 0.258571
+anchor_bottom = 0.48375
+offset_left = -13.0
+offset_top = -56.5
+offset_right = 470.0
+offset_bottom = 168.5
+grow_vertical = 2
+
+[node name="LightRainButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "light rain"
+
+[node name="HeavyRainButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "heavy rain"
+
+[node name="StormButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "thunderstorm"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "
+light rain - not much rain
+heavy rain - raining hard
+thunderstorm - there is %chance for lightning (flashbang
+for 0.5s)
+
+"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "go back to menu"
+
+[connection signal="pressed" from="VBoxContainer/LightRainButton" to="." method="_on_light_rain_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HeavyRainButton" to="." method="_on_heavy_rain_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StormButton" to="." method="_on_storm_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
